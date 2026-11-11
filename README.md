@@ -2,9 +2,13 @@
 
 A banking machine learning project that predicts which customers will make a transaction in the future, regardless of the amount.
 
+## Dataset
+- **Download link:** https://d3ilbtxij3aepc.cloudfront.net/projects/CDS-Capstone-Projects/PRCP-1003-CustTransPred.zip
+- The zip file contains `train.csv` (about 300 MB), which is not uploaded to this repository because of its size.
+- 200,000 customers, 200 anonymized numeric features (`var_0` to `var_199`), an `ID_code` and a `target` column.
+
 ## Problem
 - Binary classification: `target = 1` means the customer will transact, `0` means they will not.
-- Data: 200,000 customers, 200 anonymized numeric features (`var_0` to `var_199`).
 - The target is imbalanced (about 90% class 0, 10% class 1).
 
 ## Approach
@@ -27,7 +31,7 @@ A banking machine learning project that predicts which customers will make a tra
 The final model, CatBoost (Tuned + Features), has Recall 0.5749 and Precision 0.5780 at a threshold of about 0.68.
 
 ## How to run
-1. Download `train.csv` from the dataset link and place it in Google Drive (or the same folder as the notebook).
+1. Download and unzip the dataset from the link above, and place `train.csv` in Google Drive (or the same folder as the notebook).
 2. Open the notebook in Google Colab or Jupyter.
 3. Update the data path in the "Load the Dataset" cell.
 4. Run all cells from top to bottom. The tuning cells take several minutes.
@@ -40,5 +44,4 @@ pip install pandas numpy matplotlib seaborn scikit-learn lightgbm xgboost catboo
 - The settings and threshold were chosen on the same validation set used to report scores, so performance on new customers may be slightly lower.
 - The features are anonymized, so the model cannot be explained in business terms.
 
-## Author
-(Your name)
+ 
